@@ -10,7 +10,7 @@ where SupplierID = 11;
 select * from Orders order by OrderDate desc LIMIT 10;
 ## Find all customers that live in London, Madrid, or Brazil
 select * from Customers
-where City = 'London' OR City = 'Madrid' OR City = 'Brazil';
+where City = 'London' OR City = 'Madrid' OR Country = 'Brazil';
 ## Add a custoMadridmer record for "The Shire", the contact name is "Bilbo Baggins" the address is -"1 Hobbit-Hole" in "Bag End", postal code "111" and the country is "Middle Earth"
 insert into Customers (CustomerName, ContactName, Address, City, PostalCode, Country)
 values ('The Shire', 'Bilbo Baggins', '1 Hobbit-Hole','Bag-End', '111', 'Middle Earth');
