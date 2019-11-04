@@ -36,4 +36,18 @@ router.get('/:id', (req, res) => {
             res.status(500).json({ error: 'Failed to get account' })
         })
 });
+
+//Delete
+router.delete('/:id', (req, res) => {
+    const changes = req.body;
+
+    db('accounts')
+    .where({id:req.params.id})
+    .del()
+    .then(count => {
+            res.status(200).json(count);
+        }).catch(error => {
+            res.status(500).json({ error: 'Failed to delete account' })
+        })
+});
 module.exports = router;
